@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: rustdesk/rustdesk
-          ref: refs/tags/${{ inputs.version }}
+          ref: 01146574f2471a567a542fc3da43eaea33f0b9d8
           submodules: recursive
         
       - name: Checkout source code
@@ -43,6 +43,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: rustdesk/rustdesk
+          ref: 01146574f2471a567a542fc3da43eaea33f0b9d8
           submodules: recursive
 
       - name: Install prerequisites
