@@ -669,14 +669,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: custom-client-exe
-          path: ./SignOutput/pinode_helper.exe
+          path: ./SignOutput/${{ inputs.filename }}.exe
           retention-days: 7
 
       - name: Upload MSI artifact
         uses: actions/upload-artifact@v4
         with:
           name: custom-client-msi
-          path: ./SignOutput/pinode_helper.msi
+          path: ./SignOutput/${{ inputs.filename }}.msi
           retention-days: 7
       # - name: send file to rdgen server
       #   if: ${{ fromJson(inputs.extras).rdgen == 'true' }}
