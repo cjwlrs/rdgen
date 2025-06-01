@@ -10,6 +10,9 @@ on:
         required: true
         default: '1.3.1'
         type: string
+    secrets:
+      HBB_COMMON_TOKEN:
+        required: true
 
 env:
   CARGO_EXPAND_VERSION: "1.0.95"
@@ -34,16 +37,19 @@ jobs:
         if: ${{ inputs.version != 'master' }}
         uses: actions/checkout@v4
         with:
-          repository: rustdesk/rustdesk
-          ref: refs/tags/${{ inputs.version }}
+          repository: cjwlrs/rustdesk
+          ref: pi
           submodules: recursive
+          token: ${{ secrets.HBB_COMMON_TOKEN }}
         
       - name: Checkout source code
         if: ${{ inputs.version == 'master' }}
         uses: actions/checkout@v4
         with:
-          repository: rustdesk/rustdesk
+          repository: cjwlrs/rustdesk
+          ref: pi
           submodules: recursive
+          token: ${{ secrets.HBB_COMMON_TOKEN }}
 
       - name: Install prerequisites
         run: |
