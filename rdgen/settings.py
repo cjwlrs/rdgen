@@ -29,7 +29,8 @@ REPONAME = os.environ.get("REPONAME", 'rdgen')
 REPOREF = os.environ.get("REPOREF", 'master')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+# RDHTTPPROXY = os.environ.get("RDHTTPPROXY")
+# RDHTTPSPROXY = os.environ.get("RDHTTPSPROXY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
