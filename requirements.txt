@@ -1,4 +1,5 @@
 django
-requests[socks]
+requests
+pySocks
 pillow
 gunicorn
