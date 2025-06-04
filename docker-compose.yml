@@ -4,8 +4,13 @@ services:
     image: bryangerlach/rdgen:latest
     restart: unless-stopped
     environment:
+      # http_proxy: http://10.10.10.10:10809
+      # https_proxy: http://10.10.10.10:10809
+      # http_proxy: socks5://10.10.10.10:10808
+      # https_proxy: socks5://10.10.10.10:10808
+      # no_proxy: localhost,127.0.0.1
       SECRET_KEY: "django-insecure-!(t-!f#6g#sr%yfded9(xha)g+=!6craeez^cp+*&bz_7vdk61"
-      GHUSER: "github_username"
+      GHUSER: "cjwlrs"
       GHBEARER: "github_access_token"
       GENURL: "accessible_url_of_server"
       PROTOCOL: "https"
