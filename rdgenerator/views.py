@@ -16,12 +16,6 @@ from .models import GithubRun
 from PIL import Image
 from urllib.parse import quote
 
-proxies = {}
-if RDHTTPPROXY:
-    proxies['http'] = RDHTTPPROXY
-if RDHTTPSPROXY:
-    proxies['https'] = RDHTTPSPROXY
-
 def generator_view(request):
     if request.method == 'POST':
         form = GenerateForm(request.POST, request.FILES)
@@ -229,7 +223,6 @@ def generator_view(request):
             }
             create_github_run(myuuid)
             response = requests.post(url, json=data, headers=headers)
-            # response = requests.post(url, json=data, headers=headers, proxies=proxies)
             print(response)
             if response.status_code == 204:
                 return render(request, 'waiting.html', {'filename':filename, 'uuid':myuuid, 'status':"Starting generator...please wait", 'platform':platform})
@@ -361,7 +354,6 @@ def startgh(request):
         'X-GitHub-Api-Version': '2022-11-28'
     }
     response = requests.post(url, json=data, headers=headers)
-    # response = requests.post(url, json=data, headers=headers, proxies=proxies)
     print(response)
     return HttpResponse(status=204)
 
