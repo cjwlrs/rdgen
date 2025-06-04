@@ -198,7 +198,7 @@ def generator_view(request):
 
             #url = 'https://api.github.com/repos/'+_settings.GHUSER+'/rustdesk/actions/workflows/test.yml/dispatches'  
             data = {
-                "ref":"master",
+                "ref":_settings.REPOREF,
                 "inputs":{
                     "server":server,
                     "key":key,
