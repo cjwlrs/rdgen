@@ -7,6 +7,13 @@ on:
       - master
     tags:
       - 'v*.*.*'
+  workflow_dispatch:  # 添加手动触发选项
+    inputs:
+      image_tag:
+        description: 'Docker image tag'
+        required: true
+        default: 'manual'
+        type: string
 
 jobs:
   build:

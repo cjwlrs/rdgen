@@ -10,6 +10,7 @@ services:
       GENURL: "accessible_url_of_server"
       PROTOCOL: "https"
       REPONAME: "rdgen"
+      REPONAME: "master"
     ports:
       - "8000:8000"
     dns:

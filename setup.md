@@ -51,6 +51,7 @@
         * GHBEARER="your fine-grained access token"  
         * PROTOCOL="https" *optional - defaults to "https", change to "http" if you need to
         * REPONAME="rdgen" *optional - defaults to "rdgen", change this if you renamed the repo when you forked it
+        * REPOREF="master" *optional - defaults to "master"
     * github secrets (setup on your github account for your rdgen repo):  
         * GENURL="example.com:8000"  *this is the domain and port that you are
           running rdgen on, needs to be accessible on the internet, depending
